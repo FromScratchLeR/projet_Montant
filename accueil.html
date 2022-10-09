@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="ISO-8859-1" />
+  <title>Mini-projet</title>
+  <link rel="stylesheet" media="screen" type="text/css" href="accueil.css" />
+</head>
+
+<body>
+  <div class="head">
+    <div class="logo">
+      <img src="assets/logo.png" />
+    </div>
+  </div>
+
+  <div class="inputInformation">
+    <div>
+      <label>Montant:
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+      <input type="number" name="Montant" id="montant" size="20" placeholder=" Tapez le montant" step="0.01" min=""
+        max="" />
+    </div>
+
+    <div>
+      <label>paiement numero 1:</label>
+      <input type="number" placeholder="Tapez le paiement 1" name="p1" id="p1" size="20" step="0.01" min="" max="" />
+    </div>
+    <div>
+      <label>paiement numero 2:</label>
+      <input type="number" name="p2" id="p2" size="20" placeholder="Tapez le paiement 2" step="0.01" min="" max="" />
+    </div>
+    <div>
+      <label>paiement numero 3:</label>
+      <input type="number" name="p3" id="p3" size="20" placeholder="Tapez le paiement 3" step="0.01" min="" max="" />
+    </div>
+  </div>
+
+  <div class="loop-wrapper">
+    <div class="mountain"></div>
+    <div class="hill"></div>
+    <div class="tree"></div>
+    <div class="tree"></div>
+    <div class="tree"></div>
+    <div class="rock"></div>
+    <div class="truck"></div>
+    <div class="wheels"></div>
+  </div>
+  <script src="accueil.js"></script>
+  <script>
+    const valeur1 = document.getElementById("p1");
+    const valeur2 = document.getElementById("p2");
+    const valeur3 = document.getElementById("p3");
+
+    montant.addEventListener("input", verif_egaliteMontant);
+    valeur1.addEventListener("input", verif_egaliteValeurP1);
+    valeur2.addEventListener("input", verif_egaliteValeurP2);
+    valeur3.addEventListener("input", verif_egaliteValeurP3);
+
+    function verif_egaliteMontant() {
+      let m = parseFloat(montant.value);
+
+      document.getElementById("p1").value = m !== "" ? m / 3 : "";
+      document.getElementById("p2").value = m !== "" ? m / 3 : "";
+      document.getElementById("p3").value = m !== "" ? m / 3 : "";
+    }
+
+    function verif_egaliteValeurP1() {
+      let p1 = parseFloat(valeur1.value);
+      document.getElementById("p2").value = p1;
+      document.getElementById("p3").value = p1;
+      document.getElementById("montant").value = p1 * 3;
+    }
+    function verif_egaliteValeurP2() {
+      let p2 = parseFloat(valeur2.value);
+      document.getElementById("p1").value = p2;
+      document.getElementById("p3").value = p2;
+      document.getElementById("montant").value = p2 * 3;
+    }
+    function verif_egaliteValeurP3() {
+      let p3 = parseFloat(valeur3.value);
+      document.getElementById("p1").value = p3;
+      document.getElementById("p2").value = p3;
+      document.getElementById("montant").value = p3 * 3;
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,1 @@
+{"scripts":{"start":"node accueil.js"},"dependencies":{"ci":"^2.2.0","node":"^18.10.0"}}
